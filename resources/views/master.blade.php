@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="tr">
 
 <head>
-    <title>Nura Admin - Dashboard</title>
-    <meta name="description" content="Dashboard | Nura Admin">
+    <title>PKDS Sistemi</title>
+    <meta name="description" content="PDKS Sistemi">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Your website">

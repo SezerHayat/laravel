@@ -6,9 +6,21 @@
 
             <ul>
                 <li class="submenu">
-                    <a class="active" href="{{route('home')}}">
-                        <i class="fas fa-bars"></i>
-                        <span> Dashboard </span>
+                    <a class="active" href="{{ route('home') }}">
+                        <i class="fas fa-home"></i>
+                        <span> Genel Görünüm </span>
+                    </a>
+                    <a class="" href="{{ route('home') }}">
+                        <i class="fas fa-clock"></i>
+                        <span> Fazla Mesai </span>
+                    </a>
+                    <a class="" href="{{ route('home') }}">
+                        <i class="fas fa-user-tie"></i>
+                        <span> Personeller </span>
+                    </a>
+                    <a class="" href="{{ route('home') }}">
+                        <i class="fas fa-building"></i>
+                        <span> Stok (Yakında) </span>
                     </a>
                 </li>
 
@@ -25,3 +37,4 @@
     </div>
 
 </div>
+

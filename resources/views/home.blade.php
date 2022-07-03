@@ -10,7 +10,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <div class="breadcrumb-holder">
-                            <h1 class="main-title float-left">Dashboard</h1>
+                            <h1 class="main-title float-left">Genel Görünüm</h1>
 
                             <div class="clearfix"></div>
                         </div>
@@ -19,22 +19,28 @@
                 </div>
                 <!-- end row -->
 
+                <div class="row">
+                    <div class="col-md-12">
+                        @include('./alert/alert')
+                        @include('./alert/error')
+                    </div>
+                </div>
 
                 <div class="row">
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box noradius noborder bg-danger">
-                            <i class="far fa-user float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Users</h6>
-                            <h1 class="m-b-20 text-white counter">487</h1>
-                            <span class="text-white">12 Today</span>
+                            <i class="far fa-time float-right text-white"></i>
+                            <h6 class="text-white text-uppercase m-b-20">Günlük Fazla Mesai</h6>
+                            <h1 class="m-b-20 text-white counter">487 Saat</h1>
+                            <span class="text-white">Aylık Fazla Mesai</span>
                         </div>
                     </div>
 
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box noradius noborder bg-purple">
                             <i class="fas fa-download float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Downloads</h6>
-                            <h1 class="m-b-20 text-white counter">290</h1>
+                            <h6 class="text-white text-uppercase m-b-20">Haftalık Mesai</h6>
+                            <h1 class="m-b-20 text-white counter">290 Saat</h1>
                             <span class="text-white">12 Today</span>
                         </div>
                     </div>
@@ -42,8 +48,8 @@
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box noradius noborder bg-warning">
                             <i class="fas fa-shopping-cart float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Orders</h6>
-                            <h1 class="m-b-20 text-white counter">320</h1>
+                            <h6 class="text-white text-uppercase m-b-20">Aylık</h6>
+                            <h1 class="m-b-20 text-white counter">320 Saat</h1>
                             <span class="text-white">25 Today</span>
                         </div>
                     </div>
@@ -51,7 +57,7 @@
                     <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
                         <div class="card-box noradius noborder bg-info">
                             <i class="far fa-envelope float-right text-white"></i>
-                            <h6 class="text-white text-uppercase m-b-20">Messages</h6>
+                            <h6 class="text-white text-uppercase m-b-20">Geçen Aydan Fazla</h6>
                             <h1 class="m-b-20 text-white counter">58</h1>
                             <span class="text-white">5 New</span>
                         </div>
@@ -118,22 +124,22 @@
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Personel Adı</label>
-                                                <input type="text" class="form-control" name="name" id="exampleInputEmail1"
-                                                    placeholder="Personel Adı">
+                                                <input type="text" class="form-control" name="name"
+                                                    id="exampleInputEmail1" placeholder="Personel Adı">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Personel E-mail</label>
-                                                <input type="text" class="form-control" name="email" id="exampleInputEmail1"
-                                                    placeholder="Personel Adı">
+                                                <input type="text" class="form-control" name="email"
+                                                    id="exampleInputEmail1" placeholder="Personel Adı">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Personel Şifre</label>
-                                                <input type="password" class="form-control" name="password" id="exampleInputEmail1"
-                                                    placeholder="Personel Adı">
+                                                <input type="password" class="form-control" name="password"
+                                                    id="exampleInputEmail1" placeholder="Personel Adı">
                                             </div>
                                     </div>
                                     <div class="modal-footer">
-                                       <input type="submit" value="Kaydet" class="btn btn-primary">
+                                        <input type="submit" value="Kaydet" class="btn btn-primary">
                                     </div>
                                     </form>
                                 </div>
@@ -144,9 +150,8 @@
                         <div class="card mb-3">
 
                             <div class="card-header">
-                                <h3><i class="fas fa-user-friends"></i> Users details</h3>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus non luctus metus. Vivamus
-                                fermentum ultricies orci sit amet sollicitudin.
+                                <h3><i class="fas fa-user-friends"></i> Personel Detayları</h3>
+                                Firmanızın personellerinin detayları görebileceğiniz ekran burasıdır.
                             </div>
 
                             <div class="card-body">
@@ -154,8 +159,8 @@
                                     <table id="example1" class="table table-bordered table-striped" style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Name</th>
-                                                <th>email</th>
+                                                <th>İsim</th>
+                                                <th>Email</th>
                                                 <th>İşlemler</th>
                                             </tr>
                                         </thead>
@@ -167,8 +172,10 @@
                                                     <td>
                                                         <button class="btn btn-warning"><i
                                                                 class="fa fa-edit"></i></button>
-                                                        <button class="btn btn-danger"><i
-                                                                class="fa fa-trash"></i></button>
+                                                        <a href="{{ route('personelRemove',[$item->id]) }}">
+                                                            <button class="btn btn-danger"><i
+                                                                    class="fa fa-trash"></i></button>
+                                                        </a>
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -14,4 +14,9 @@ class HomeController extends Controller
 
         return view('home',compact('personels'));
     }
+
+    public function personeller(){
+        $personels = Personel::with('getUser')->get();
+        return view('personel',compact('personels'));
+    }
 }

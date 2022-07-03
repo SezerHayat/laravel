@@ -5,7 +5,7 @@
             <div class="headerbar-left">
                 <a href="index.html" class="logo">
                     <img alt="Logo" src="../../assets/images/logo.png" />
-                    <span>Nura Admin</span>
+                    <span>Personel Mesai Sistemi</span>
                 </a>
             </div>
 
@@ -23,16 +23,16 @@
                             <div class="dropdown-item noti-title">
                                 <h5>
                                     <small>
-                                        <span class="label label-danger pull-xs-right">12</span>Mailbox</small>
+                                        <span class="label label-danger pull-xs-right">12</span>Mail</small>
                                 </h5>
                             </div>
 
                             <!-- item-->
                             <a href="mail-all.html" class="dropdown-item notify-item">
                                 <p class="notify-details ml-0">
-                                    <b>John Doe</b>
-                                    <span>New message received</span>
-                                    <small class="text-muted">3 minutes ago</small>
+                                    <b>Sezer</b>
+                                    <span>Yeni Mesajınız Var.</span>
+                                    <small class="text-muted">2 dk önce</small>
                                 </p>
                             </a>
 
@@ -56,7 +56,7 @@
 
                             <!-- All-->
                             <a href="mail-all.html" class="dropdown-item notify-item notify-all">
-                                View All Messages
+                                Tüm Mesajları Göster
                             </a>
 
                         </div>
@@ -74,7 +74,7 @@
                             <div class="dropdown-item noti-title">
                                 <h5>
                                     <small>
-                                        <span class="label label-danger pull-xs-right">5</span>Allerts</small>
+                                        <span class="label label-danger pull-xs-right">5</span>Alarm</small>
                                 </h5>
                             </div>
 
@@ -84,9 +84,9 @@
                                     <img src="../../assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
                                 </div>
                                 <p class="notify-details">
-                                    <b>John Doe</b>
+                                    <b>Sezer</b>
                                     <span>User registration</span>
-                                    <small class="text-muted">3 minutes ago</small>
+                                    <small class="text-muted">3 dk önce</small>
                                 </p>
                             </a>
 
@@ -132,7 +132,7 @@
                             <!-- item-->
                             <div class="dropdown-item noti-title">
                                 <h5>
-                                    <small>Settings</small>
+                                    <small>Ayarlar</small>
                                 </h5>
                             </div>
 
@@ -140,7 +140,7 @@
                             <a href="#" class="dropdown-item notify-item">
                                 <p class="notify-details ml-0">
                                     <i class="fas fa-cog"></i>
-                                    <b>Settings 1</b>
+                                    <b>Ayar 1</b>
                                 </p>
                             </a>
 
@@ -148,7 +148,7 @@
                             <a href="#" class="dropdown-item notify-item">
                                 <p class="notify-details ml-0">
                                     <i class="fas fa-cog"></i>
-                                    <b>Settings 2</b>
+                                    <b>Ayar 2</b>
                                 </p>
                             </a>
 
@@ -156,7 +156,7 @@
                             <a href="#" class="dropdown-item notify-item">
                                 <p class="notify-details ml-0">
                                     <i class="fas fa-cog"></i>
-                                    <b>Settings 3</b>
+                                    <b>Ayar 3</b>
                                 </p>
                             </a>
 
@@ -173,20 +173,20 @@
                             <!-- item-->
                             <div class="dropdown-item noti-title">
                                 <h5 class="text-overflow">
-                                    <small>Hello, admin</small>
+                                    <small>Merhaba, Yönetici</small>
                                 </h5>
                             </div>
 
                             <!-- item-->
                             <a href="profile.html" class="dropdown-item notify-item">
                                 <i class="fas fa-user"></i>
-                                <span>Profile</span>
+                                <span>Profil</span>
                             </a>
 
                             <!-- item-->
                             <a href="#" class="dropdown-item notify-item">
                                 <i class="fas fa-power-off"></i>
-                                <span>Logout</span>
+                                <span>Çıkış Yap</span>
                             </a>
                         </div>
                     </li>

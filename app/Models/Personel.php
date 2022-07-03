@@ -14,6 +14,6 @@ class Personel extends Model
     protected $guarded = [];
 
     public function getUser(){
-        return $this->hasOne('App\Models\User','id');
+        return $this->hasOne('App\Models\User','id','user_id');
     }
 }

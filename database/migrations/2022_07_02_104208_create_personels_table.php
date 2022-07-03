@@ -16,7 +16,9 @@ class CreatePersonelsTable extends Migration
         Schema::create('personels', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->unsigned();
+            $table->string('departman')->nullable();
             $table->timestamps();
+
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

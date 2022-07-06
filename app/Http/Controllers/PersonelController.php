@@ -67,6 +67,18 @@ class PersonelController extends Controller
 
     }
 
+    public function personelEditPassword(Request $request,$id){
+        $this->validate($request, [
+            'password' => 'required|min:5',
+        ]);
+
+        User::where('id',$id)->update([
+            'password'=>$request->password,
+        ]);
+
+        return redirect()->back()->with('message',' Şifre Başarıyla Güncellendi')->with('message-type', 'success');
+    }
+
     // public function index()
     // {
     //     return view('home');

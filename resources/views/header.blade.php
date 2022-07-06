@@ -12,158 +12,6 @@
             <nav class="navbar-custom">
 
                 <ul class="list-inline float-right mb-0">
-                    <li class="list-inline-item dropdown notif">
-                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-                            <i class="far fa-envelope"></i>
-                            <span class="notif-bullet"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5>
-                                    <small>
-                                        <span class="label label-danger pull-xs-right">12</span>Mail</small>
-                                </h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="mail-all.html" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <b>Sezer</b>
-                                    <span>Yeni Mesajınız Var.</span>
-                                    <small class="text-muted">2 dk önce</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="mail-all.html" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <b>Michael Smith</b>
-                                    <span>New message received</span>
-                                    <small class="text-muted">18 minutes ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="mail-all.html" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <b>John Lenons</b>
-                                    <span>New message received</span>
-                                    <small class="text-muted">Yesterday, 18:27</small>
-                                </p>
-                            </a>
-
-                            <!-- All-->
-                            <a href="mail-all.html" class="dropdown-item notify-item notify-all">
-                                Tüm Mesajları Göster
-                            </a>
-
-                        </div>
-
-                    </li>
-
-                    <li class="list-inline-item dropdown notif">
-                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-                            <i class="far fa-bell"></i>
-                            <span class="notif-bullet"></span>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-lg">
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5>
-                                    <small>
-                                        <span class="label label-danger pull-xs-right">5</span>Alarm</small>
-                                </h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-faded">
-                                    <img src="../../assets/images/avatars/avatar2.png" alt="img" class="rounded-circle img-fluid">
-                                </div>
-                                <p class="notify-details">
-                                    <b>Sezer</b>
-                                    <span>User registration</span>
-                                    <small class="text-muted">3 dk önce</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-faded">
-                                    <img src="../../assets/images/avatars/avatar3.png" alt="img" class="rounded-circle img-fluid">
-                                </div>
-                                <p class="notify-details">
-                                    <b>Michael Cox</b>
-                                    <span>Task 2 completed</span>
-                                    <small class="text-muted">12 minutes ago</small>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <div class="notify-icon bg-faded">
-                                    <img src="../../assets/images/avatars/avatar4.png" alt="img" class="rounded-circle img-fluid">
-                                </div>
-                                <p class="notify-details">
-                                    <b>Michelle Dolores</b>
-                                    <span>New job completed</span>
-                                    <small class="text-muted">35 minutes ago</small>
-                                </p>
-                            </a>
-
-                            <!-- All-->
-                            <a href="#" class="dropdown-item notify-item notify-all">
-                                View All Allerts
-                            </a>
-
-                        </div>
-                    </li>
-
-
-                    <li class="list-inline-item dropdown notif">
-                        <a class="nav-link dropdown-toggle arrow-none" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
-                            <i class="fas fa-cog"></i>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-right dropdown-arrow dropdown-arrow-success dropdown-sm">
-                            <!-- item-->
-                            <div class="dropdown-item noti-title">
-                                <h5>
-                                    <small>Ayarlar</small>
-                                </h5>
-                            </div>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <i class="fas fa-cog"></i>
-                                    <b>Ayar 1</b>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <i class="fas fa-cog"></i>
-                                    <b>Ayar 2</b>
-                                </p>
-                            </a>
-
-                            <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
-                                <p class="notify-details ml-0">
-                                    <i class="fas fa-cog"></i>
-                                    <b>Ayar 3</b>
-                                </p>
-                            </a>
-
-                        </div>
-
-                    </li>
-
 
                     <li class="list-inline-item dropdown notif">
                         <a class="nav-link dropdown-toggle nav-user" data-toggle="dropdown" href="#" aria-haspopup="false" aria-expanded="false">
@@ -173,18 +21,13 @@
                             <!-- item-->
                             <div class="dropdown-item noti-title">
                                 <h5 class="text-overflow">
-                                    <small>Merhaba, Yönetici</small>
+                                    <small>Merhaba, {{auth()->user()->name}}</small>
                                 </h5>
                             </div>
 
-                            <!-- item-->
-                            <a href="profile.html" class="dropdown-item notify-item">
-                                <i class="fas fa-user"></i>
-                                <span>Profil</span>
-                            </a>
 
                             <!-- item-->
-                            <a href="#" class="dropdown-item notify-item">
+                            <a href="{{ route('logout') }}" class="dropdown-item notify-item">
                                 <i class="fas fa-power-off"></i>
                                 <span>Çıkış Yap</span>
                             </a>

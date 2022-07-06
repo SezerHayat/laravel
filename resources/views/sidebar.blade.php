@@ -18,7 +18,7 @@
                         <i class="fas fa-user-tie"></i>
                         <span> Personeller </span>
                     </a>
-                    <a class="" href="{{ route('home') }}">
+                    <a class="" href="{{ route('stok') }}">
                         <i class="fas fa-building"></i>
                         <span> Stok (Yakında) </span>
                     </a>

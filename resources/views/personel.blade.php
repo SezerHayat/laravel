@@ -54,7 +54,8 @@
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
                         <div class="card mb-3">
                             <div class="card-body">
-                                <form>
+                                <form method="POST" action="{{ route('personelEditPassword',[$personel->id]) }}">
+                                    @csrf
                                     <div class="form-group">
                                         <label for="exampleInputPassword1">Şifre</label>
                                         <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password" required>

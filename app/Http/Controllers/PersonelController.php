@@ -2,13 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Mesai;
 use App\Models\Personel;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 class PersonelController extends Controller
 {
+
+    public function personel()
+    {
+       
+        $userAccount = Auth::user();
+
+        if ($userAccount->isAdmin == 1) {
+            
+            $personels = Personel::with('getUser')->get();
+            return view('personel', compact('personels', 'userAccount'));
+        }
+        
+    }
 
     public function personelAdd(Request $request)
     {

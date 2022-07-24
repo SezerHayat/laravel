@@ -6,7 +6,7 @@
 
             <ul>
                 <li class="submenu">
-                    <a class="active" href="{{ route('home') }}">
+                    <a class="{{ (request()->is('/')) ? 'active' : '' }}" href="{{ route('home') }}">
                         <i class="fas fa-home"></i>
                         <span> Genel Görünüm </span>
                     </a>
@@ -14,11 +14,11 @@
                         <i class="fas fa-clock"></i>
                         <span> Fazla Mesai </span>
                     </a>
-                    <a class="" href="{{ route('home') }}">
+                    <a class="{{ (request()->is('personel')) ? 'active' : '' }}" href="{{ route('personel') }}">
                         <i class="fas fa-user-tie"></i>
                         <span> Personeller </span>
                     </a>
-                    <a class="" href="{{ route('stok') }}">
+                    <a class="{{ (request()->is('stok')) ? 'active' : '' }}" href="{{ route('stok') }}">
                         <i class="fas fa-building"></i>
                         <span> Stok (Yakında) </span>
                     </a>

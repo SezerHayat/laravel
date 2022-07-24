@@ -19,7 +19,7 @@ class CreateMesaisTable extends Migration
             $table->bigInteger('personel_id')->unsigned();
             $table->string('start');
             $table->string('end')->nullable()->default('Hala Çalışıyor');
-            $table->decimal('total',20,2)->nullable()->default(0);
+            $table->string('total')->nullable()->default(null);
             $table->string('notes')->nullable()->default('Not Yok');
             $table->timestamps();
 

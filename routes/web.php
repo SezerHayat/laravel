@@ -20,6 +20,7 @@ Route::group(['middleware'=>'auth'],function(){
     Route::get('/',[HomeController::class,'index'])->name('home');
 
     Route::group(['prefix'=>'personel'],function(){
+        Route::get('/',[PersonelController::class,'personel'])->name('personel');
         Route::post('/add',[PersonelController::class,'personelAdd'])->name('personelAdd');
         Route::get('/delete/{id}',[PersonelController::class,'personelRemove'])->name('personelRemove');
         Route::get('/detail/{id}',[PersonelController::class,'personelEdit'])->name('personelEdit');

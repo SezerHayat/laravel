@@ -206,7 +206,6 @@
                             </form>
                         @endif
 
-
                         <div class="card mb-3">
                             <div class="card-header">
                                 <h3><i class="fas fa-user-friends"></i> Mesai Tablosu</h3>
@@ -230,7 +229,7 @@
                                                     <td>{{ date('d/m/Y', strtotime($item->created_at)) }}</td>
                                                     <td>{{ $item->start }}</td>
                                                     <td>{{ $item->end }}</td>
-                                                    <td>{{ $item->total }}</td>
+                                                    <td>{{ $item->total!=null ? ($item->total) : '0' }}</td>
                                                     <td>{{ $item->notes }}</td>
                                                 </tr>
                                             @endforeach

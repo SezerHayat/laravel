@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mesai;
+use Carbon\CarbonPeriod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 
 class MesaiController extends Controller
@@ -23,18 +25,22 @@ class MesaiController extends Controller
         date_default_timezone_set("europe/Istanbul"); 
         $mesai = Mesai::where('personel_id',Auth::id())->orderBy('created_at','DESC')->limit(1)->first();
 
-        $nowHour = (date('H:i',time()));
-        $now = strtotime(date('H:i',time()));
+        $now = Carbon::now();
+        $startDate = $mesai->created_at;
 
-        $start=(int) strtotime($mesai->start);
+        $dailyTotal = abs((strtotime($now)-strtotime($startDate)))/60;
 
-        
-        $total=(($now-$start)/1440)/4;
-        // dd($total);
+        // dd($dailyTotal);
+
+        // dd(strtotime($now)-strtotime($startDate));
+        // $dailyTotal = substr(abs((strtotime($now)-strtotime($startDate))/60/60),0,4);
+
+
         $mesai->update([
-            'end'=>$nowHour,
-            "total"=>$total
+            'end'=>$now,
+            'total'=>substr($dailyTotal/60,0,4)
         ]);
+
         return redirect()->route('home')->with('message', 'Mesaiye Bitti')->with('message-type', 'success');
 
     }

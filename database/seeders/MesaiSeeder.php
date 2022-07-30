@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Mesai;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Carbon;
 
 class MesaiSeeder extends Seeder
 {
@@ -17,8 +18,8 @@ class MesaiSeeder extends Seeder
         for ($i=0; $i < 30; $i++) { 
             Mesai::create([
                 'personel_id'=>rand(1,5),
-                'end'=>'08.00',
-                'start'=>'17.00',
+                'end'=>Carbon::now(),
+                'start'=>Carbon::now(),
                 'notes'=>'',
             ]);
         }

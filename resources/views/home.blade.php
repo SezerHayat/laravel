@@ -194,7 +194,7 @@
                 @endif
                 @if ($userAccount->isAdmin == 0)
                     <div class="col-12">
-                        @if ($mesaiControl->end == 'Hala Çalışıyor')
+                        @if ($mesaiControl->end == null)
                             <form action="{{ route('mesaiEnd') }}" method="post">
                                 @csrf
                                 <input type="submit" class="btn btn-warning mb-3" value="Mesai Bitir">
@@ -220,18 +220,58 @@
                                                 <th>Giriş Saati</th>
                                                 <th>Çıkış Saati</th>
                                                 <th>Çalışma Saati</th>
+                                                <th>Fazla Mesai</th>
                                                 <th>Mesai Sebebi</th>
+                                                <th>Not Ekle</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($mesai as $item)
                                                 <tr>
                                                     <td>{{ date('d/m/Y', strtotime($item->created_at)) }}</td>
-                                                    <td>{{ $item->start }}</td>
-                                                    <td>{{ $item->end }}</td>
-                                                    <td>{{ $item->total!=null ? ($item->total) : '0' }}</td>
-                                                    <td>{{ $item->notes }}</td>
+                                                    <td>{{ substr($item->start, -1 - 8) }}</td>
+                                                    <td>{{ substr($item->end, -1 - 8) }}</td>
+                                                    <td>{{ $item->total != null ? $item->total : '0' }}</td>
+                                                    <td>1</td>
+                                                    <td style="max-width: 50px" >{{ $item->notes }}</td>
+                                                    <td>
+                                                        <button class="btn btn-warning" data-toggle="modal"
+                                                            data-target="#staticBackdrop-{{ $item->id }}"><i
+                                                                class="fa fa-edit"></i></button>
+                                                    </td>
                                                 </tr>
+                                                <div class="modal fade" id="staticBackdrop-{{ $item->id }}"
+                                                    data-backdrop="static" data-keyboard="false" tabindex="-1"
+                                                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title" id="staticBackdropLabel">
+                                                                    {{ date('d/m/Y', strtotime($item->created_at)) }}
+                                                                    Tarihli Çalışma Gününe Not Ekle</h5>
+                                                                <button type="button" class="close"
+                                                                    data-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true">&times;</span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <form action="{{ route('mesainote',[$item->id]) }}" method="post">
+                                                                    @csrf
+                                                                    <div class="form-group">
+                                                                        <label for="">Not</label>
+                                                                        <input type="text" name="notes"
+                                                                            class="form-control" placeholder="Not Ekle"
+                                                                            id="">
+                                                                    </div>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <input class="btn btn-primary" type="submit"
+                                                                    value="Kaydet">
+                                                            </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             @endforeach
                                         </tbody>
                                     </table>

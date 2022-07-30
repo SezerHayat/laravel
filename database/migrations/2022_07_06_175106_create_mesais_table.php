@@ -17,9 +17,13 @@ class CreateMesaisTable extends Migration
         Schema::create('mesais', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('personel_id')->unsigned();
-            $table->string('start');
-            $table->string('end')->nullable()->default('Hala Çalışıyor');
+            $table->timestamp('start')->useCurrent();
+            $table->timestamp('end')->nullable()->default(null);
             $table->string('total')->nullable()->default(null);
+            $table->integer("clock")->nullable()->default(null);
+            $table->integer("minute")->nullable()->default(null);
+            $table->integer("overtime_clock")->nullable()->default(null);
+            $table->integer("overtime_minute")->nullable()->default(null);
             $table->string('notes')->nullable()->default('Not Yok');
             $table->timestamps();
 

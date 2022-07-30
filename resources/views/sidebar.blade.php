@@ -22,6 +22,10 @@
                         <i class="fas fa-building"></i>
                         <span> Stok (Yakında) </span>
                     </a>
+                    <a class="{{ (request()->is('product')) ? 'active' : '' }}" href="{{ route('urunler') }}">
+                        <i class="fas fa-building"></i>
+                        <span> Ürün Listesi (Yakında) </span>
+                    </a>
                 </li>
 
 

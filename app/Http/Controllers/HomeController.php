@@ -27,20 +27,7 @@ class HomeController extends Controller
             $mesai = Mesai::where('personel_id',Auth::id())->orderBy('created_at','DESC')->get();
 
             $mesaiControl = Mesai::where('personel_id',Auth::id())->orderByDesc('id')->limit(1)->first();
-
-            date_default_timezone_set("europe/Istanbul"); 
-            $mesais = Mesai::where('personel_id',Auth::id())->orderBy('created_at','DESC')->limit(1)->first();
-            $now = $mesais->updated_at;
-            $startDate = $mesais->created_at;
-    
-            $dailyTotal = abs((strtotime($now)-strtotime($startDate)))/60/60;
-
-            Mesai::orderBy('created_at','DESC')->limit(1)->where('personel_id',Auth::id())->update([
-                'total'=>$dailyTotal,
-                'end'=>$now
-            ]);
-
-            return view('home', compact('userAccount','mesai',"mesaiControl",'dailyTotal'));
+            return view('home', compact('userAccount','mesai',"mesaiControl"));
         }
     }
 

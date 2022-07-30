@@ -30,7 +30,7 @@
 				<div class="col-md-6 col-lg-6">
 					<div class="login-wrap p-4 p-md-5">
 		      	<div class="icon d-flex align-items-center justify-content-center">
-		      		<img style="width: 70%" src="/assets/images/logo/">
+		      		{{-- <img style="width: 70%" src="/assets/images/logo/"> --}}Eio
 		      	</div>
 		      	<h3 class="text-center mb-12"></h3>
                   <div class="col-lg-12">
@@ -42,10 +42,10 @@
 				<form action="" method="post" class="login-form">
                     @csrf
                     <div class="form-group">
-                        <input type="text" name="email" autocomplete="off" class="form-control rounded-left" placeholder="email" required>
+                        <input type="text" name="email" autocomplete="off" class="form-control rounded-left" placeholder="Email" required>
                     </div>
                     <div class="form-group d-flex">
-                        <input type="password" name="password" autocomplete="off" class="form-control rounded-left" placeholder="password" required>
+                        <input type="password" name="password" autocomplete="off" class="form-control rounded-left" placeholder="Şifre" required>
                     </div>
                     <div class="form-group">
                         <button type="submit" class="form-control btn btn-primary rounded submit px-3">Giriş Yap</button>

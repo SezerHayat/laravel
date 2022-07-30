@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MesaiController;
 use App\Http\Controllers\PersonelController;
+use App\Http\Controllers\ProductConroller;
 use App\Http\Controllers\StokController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
@@ -29,8 +30,10 @@ Route::group(['middleware'=>'auth'],function(){
     });
     Route::post('/mesaiStart',[MesaiController::class,'mesaiStart'])->name('mesaiStart');
     Route::post('/mesaiEnd',[MesaiController::class,'mesaiEnd'])->name('mesaiEnd');
-    
+    Route::post('/mesai-not/{id}',[MesaiController::class,'mesainote'])->name('mesainote');
     Route::get('/stok', [StokController::class,'StokGoster'])->name('stok');
-    Route::post('/stok', [StokController::class,'StokAdd']);
+    Route::post('/stok', [StokController::class,'StokAdd'])->name('stokadd');
+
+    Route::get('/product', [ProductConroller::class,'UrunGoster'])->name('urunler');
 });
 

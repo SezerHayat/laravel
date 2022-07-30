@@ -21,7 +21,7 @@
                 <div class="row">
                     <div class="row m-3">
                         <button type="button" class="btn btn-success" data-toggle="modal" data-target="#exampleModal">
-                            <i class="fa fa-plus"></i> Stok Ekle
+                            <i class="fa fa-plus"></i> Ürün Ekle
                         </button>
 
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
@@ -35,16 +35,16 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('stokadd')}}" method="post">
+                                        <form action="{{ route('personelAdd') }}" method="post">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Ürün Adı</label>
-                                                <input type="text" class="form-control" name="Stkname"
+                                                <input type="text" class="form-control" name="pname"
                                                     id="exampleInputEmail1" placeholder="Ürün Adı Adı">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Ürün Özellik</label>
-                                                <input type="text" class="form-control" name="stkProp"
+                                                <input type="text" class="form-control" name="productprop"
                                                     id="exampleInputEmail1" placeholder="Ürün Özellik">
                                             </div>
                                             <div class="form-group">
@@ -65,8 +65,8 @@
                         <div class="card mb-3">
 
                             <div class="card-header">
-                                <h3><i class="fas fa-user-friends"></i> Stok Detayları</h3>
-                                Firmanızın stoklarına ait detayları görebileceğiniz ekran burasıdır.
+                                <h3><i class="fa-regular fa-plane-circle-check"></i> Ürün Detayları</h3>
+                                Firmanızın ürün/garanti/reçete ait detayları görebileceğiniz ekran burasıdır.
                             </div>
 
                             <div class="card-body">
@@ -75,8 +75,8 @@
                                         style="width:100%">
                                         <thead>
                                             <tr>
-                                                <th>Stok İsmi</th>
-                                                <th>Ürün Özelliği</th>
+                                                <th>Ürün İsmi</th>
+                                                <th>Kullanılan Malzemeler</th>
                                                 <th>Adet</th>
                                             </tr>
                                         </thead>

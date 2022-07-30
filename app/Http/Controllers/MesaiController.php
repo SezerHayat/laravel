@@ -10,38 +10,68 @@ use Illuminate\Support\Facades\Auth;
 
 class MesaiController extends Controller
 {
-    public function mesaiStart(){
+    public function mesaiStart()
+    {
         date_default_timezone_set("europe/Istanbul");
 
         Mesai::create([
-            'personel_id'=>Auth::id(),
-            'start'=> date('H:i',time())
+            'personel_id' => Auth::id(),
+            'start' => Carbon::now()
         ]);
         return redirect()->route('home')->with('message', 'Mesaiye Başlandı')->with('message-type', 'success');
-
     }
 
-    public function mesaiEnd(){
-        date_default_timezone_set("europe/Istanbul"); 
-        $mesai = Mesai::where('personel_id',Auth::id())->orderBy('created_at','DESC')->limit(1)->first();
+    public function mesaiEnd()
+    {
+        date_default_timezone_set("europe/Istanbul");
+        $mesai = Mesai::where('personel_id', Auth::id())->orderBy('created_at', 'DESC')->limit(1)->first();
 
-        $now = Carbon::now();
-        $startDate = $mesai->created_at;
+        $now = Carbon::now()->format('H:i:s');
+        $startDate = substr($mesai->start, -1 - 8);
 
-        $dailyTotal = abs((strtotime($now)-strtotime($startDate)))/60;
+        $current = strtotime($now) - strtotime($startDate);
+        $minute = $current / 60;
+        $second_current = floor($current - (floor($minute) * 60));
+        $clock = $minute / 60;
+        $minute_current = floor($minute - (floor($clock) * 60));
+        $day = $clock / 24;
+        $clock_current = floor($clock - (floor($day) * 60));
 
-        // dd($dailyTotal);
+        $current_text = $clock_current . ' Saat ' . $minute_current . ' Dakika ' . $second_current . ' Saniye';
 
-        // dd(strtotime($now)-strtotime($startDate));
-        // $dailyTotal = substr(abs((strtotime($now)-strtotime($startDate))/60/60),0,4);
-
+        if ($clock_current >= 9) {
+            $overtime = (($clock_current - 9) * 60) + $minute_current;
+            $mesai->update([
+                'end' => Carbon::now(),
+                'total' => $current_text,
+                'clock' => $clock_current,
+                'minute' => $minute_current,
+                'overtime_clock' => floor($overtime / 60),
+                'overtime_minute' => $minute_current,
+            ]);
+            return redirect()->route('home')->with('message', 'Mesaiye Bitti')->with('message-type', 'success');
+        }
 
         $mesai->update([
-            'end'=>$now,
-            'total'=>substr($dailyTotal/60,0,4)
+            'end' => Carbon::now(),
+            'total' => $current_text,
+            'clock' => $clock_current,
+            'minute' => $minute_current,
+            'overtime_clock' => 0,
+            'overtime_minute' => 0
         ]);
 
-        return redirect()->route('home')->with('message', 'Mesaiye Bitti')->with('message-type', 'success');
 
+        return redirect()->route('home')->with('message', 'Mesaiye Bitti')->with('message-type', 'success');
+    }
+
+    public function mesainote(Request $request, $id)
+    {
+        Mesai::where('id', $id)->update([
+            'notes' => $request->notes
+        ]);
+
+
+        return redirect()->route('home')->with('message', 'Not Eklendi')->with('message-type', 'success');
     }
 }

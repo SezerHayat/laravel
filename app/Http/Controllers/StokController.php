@@ -6,12 +6,14 @@ use Illuminate\Http\Request;
 
 class StokController extends Controller
 {
-    public function StokAdd(Request $request){
-        return;
-
+    public function stokAdd(Request $request){
+        return 1;
     }
 
-    public function StokGoster(Request $request){
+    public function StokGoster(Request $request)
+    {
         return view('stok');
     }
+
+
 }

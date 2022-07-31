@@ -10,6 +10,17 @@ use Illuminate\Support\Facades\Auth;
 
 class MesaiController extends Controller
 {
+    public function index(){
+        $mesais = Mesai::orderByDesc('id')->get();
+
+        return view('mesai',compact('mesais'));
+    }
+    public function overtime(){
+        $mesais = Mesai::where('overtime_clock','>=',0)->get();
+
+        return view('overtime',compact('mesais'));
+    }
+
     public function mesaiStart()
     {
         date_default_timezone_set("europe/Istanbul");

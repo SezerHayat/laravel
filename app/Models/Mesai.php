@@ -12,4 +12,7 @@ class Mesai extends Model
     protected $table = 'mesais';
     protected $guarded = [];
 
+    public function getUser(){
+        return $this->hasOne('App\Models\User','id','personel_id');
+    }
 }

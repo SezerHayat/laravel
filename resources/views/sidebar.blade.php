@@ -10,7 +10,11 @@
                         <i class="fas fa-home"></i>
                         <span> Genel Görünüm </span>
                     </a>
-                    <a class="" href="{{ route('home') }}">
+                    <a class="" href="{{ route('mesais') }}">
+                        <i class="fas fa-clock"></i>
+                        <span> Mesai </span>
+                    </a>
+                    <a class="" href="{{ route('overtime') }}">
                         <i class="fas fa-clock"></i>
                         <span> Fazla Mesai </span>
                     </a>

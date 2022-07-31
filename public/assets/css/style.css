@@ -74,7 +74,7 @@ img {
 }
 
 .bg-danger {
-    background-color: #fb7e6d!important
+    background-color: #47C78E!important
 }
 
 .bg-purple {
@@ -619,7 +619,7 @@ body.adminbody .main-sidebar.left {
 
 #sidebar-menu>ul>li>a.active {
     color: #fff!important;
-    background-color: #fb7e6d
+    background-color: #47C78E
 }
 
 .menu-title {
@@ -826,7 +826,7 @@ body.adminbody .main-sidebar.left {
 
 .notif .noti-title {
     border-radius: 0;
-    background-color: #fb7e6d;
+    background-color: #47C78E;
     margin: 0;
     width: auto;
     padding: 8px 15px 12px 15px
@@ -907,7 +907,7 @@ body.adminbody .main-sidebar.left {
 .notif .notify-all {
     border-radius: 0;
     margin: 0;
-    background-color: #fb7e6d;
+    background-color: #47C78E;
     color: #fff
 }
 

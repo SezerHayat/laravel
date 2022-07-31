@@ -26,46 +26,29 @@
                 </div>
                 @if ($userAccount->isAdmin == 1)
                     <div class="row">
-                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                            <div class="card-box noradius noborder bg-danger">
-                                <i class="far fa-clock float-right text-white"></i>
-                                <h6 class="text-white text-uppercase m-b-20">Günlük Fazla Mesai</h6>
-                                <h1 class="m-b-20 text-white counter">487 Saat</h1>
-                                <span class="text-white">Aylık Fazla Mesai</span>
-                            </div>
-                        </div>
 
-                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
-                            <div class="card-box noradius noborder bg-purple">
-                                <i class="far fa-clock float-right text-white"></i>
-                                <h6 class="text-white text-uppercase m-b-20">Haftalık Mesai</h6>
-                                <h1 class="m-b-20 text-white counter">290 Saat</h1>
-                                <span class="text-white">12 Today</span>
-                            </div>
-                        </div>
-
-                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
                             <div class="card-box noradius noborder bg-warning">
                                 <i class="far fa-clock float-right text-white"></i>
-                                <h6 class="text-white text-uppercase m-b-20">Aylık</h6>
-                                <h1 class="m-b-20 text-white counter">320 Saat</h1>
-                                <span class="text-white">25 Today</span>
+                                <h6 class="text-white text-uppercase m-b-20">Yapılan Fazla Mesai</h6>
+                                <h1 class="m-b-20 text-white ">{{$overtime}} Saat</h1>
+                                <span class="text-white">Bu ay</span>
                             </div>
                         </div>
 
-                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-3">
+                        <div class="col-xs-12 col-md-6 col-lg-6 col-xl-6">
                             <div class="card-box noradius noborder bg-info">
                                 <i class="far fa-clock float-right text-white"></i>
-                                <h6 class="text-white text-uppercase m-b-20">Geçen Aydan Fazla</h6>
-                                <h1 class="m-b-20 text-white counter">58</h1>
-                                <span class="text-white">5 New</span>
+                                <h6 class="text-white text-uppercase m-b-20">Geçen aya göre yapılan mesai</h6>
+                                <h1 class="m-b-20 text-white ">{{$mesaiCurrent>0 ? $mesaiCurrent.' Saat Fazla ' : $mesaiCurrent . ' Saat Az'}} </h1>
+                                <span class="text-white">Bu ay</span>
                             </div>
                         </div>
                     </div>
                     <!-- end row -->
 
 
-                    <div class="row">
+                    {{-- <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-6">
                             <div class="card mb-3">
                                 <div class="card-header">
@@ -95,7 +78,7 @@
                             </div>
                             <!-- end card-->
                         </div>
-                    </div>
+                    </div> --}}
                     <!-- end row -->
 
 
@@ -152,9 +135,8 @@
                                 </div>
 
                                 <div class="card-body">
-                                    <div class="table-responsive">
-                                        <table id="example1" class="table table-bordered table-striped"
-                                            style="width:100%">
+                                    <div class="table-responsive" >
+                                        <table id="example1" class="table table-bordered table-striped" >
                                             <thead>
                                                 <tr>
                                                     <th>İsim</th>
@@ -232,7 +214,7 @@
                                                     <td>{{ substr($item->start, -1 - 8) }}</td>
                                                     <td>{{ substr($item->end, -1 - 8) }}</td>
                                                     <td>{{ $item->total != null ? $item->total : '0' }}</td>
-                                                    <td>1</td>
+                                                    <td>{{ $item->overtime_clock .' Saat ' . $item->overtime_minute . ' Dakika'}}</td>
                                                     <td style="max-width: 50px" >{{ $item->notes }}</td>
                                                     <td>
                                                         <button class="btn btn-warning" data-toggle="modal"

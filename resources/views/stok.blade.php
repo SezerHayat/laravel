@@ -35,21 +35,21 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="{{route('stokadd')}}" method="post">
+                                        <form action="{{ route('stokadd') }}" method="POST">
                                             @csrf
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Ürün Adı</label>
-                                                <input type="text" class="form-control" name="Stkname"
+                                                <input type="text" class="form-control" name="name"
                                                     id="exampleInputEmail1" placeholder="Ürün Adı Adı">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Ürün Özellik</label>
-                                                <input type="text" class="form-control" name="stkProp"
+                                                <input type="text" class="form-control" name="prop"
                                                     id="exampleInputEmail1" placeholder="Ürün Özellik">
                                             </div>
                                             <div class="form-group">
                                                 <label for="exampleInputEmail1">Ürün Adedi</label>
-                                                <input type="text" class="form-control" name="piece"
+                                                <input type="number" class="form-control" name="qty"
                                                     id="exampleInputEmail1" placeholder="Ürün Adedi">
                                             </div>
                                     </div>
@@ -71,8 +71,7 @@
 
                             <div class="card-body">
                                 <div class="table-responsive">
-                                    <table id="example1" class="table table-bordered table-striped"
-                                        style="width:100%">
+                                    <table id="example1" class="table table-bordered table-striped" style="width:100%">
                                         <thead>
                                             <tr>
                                                 <th>Stok İsmi</th>
@@ -81,19 +80,17 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td>LG Screen</td>
-                                                    <td>43 Inc</td>
-                                                    <td>
-                                                        103 Adet
-                                                            <button class="btn btn-warning"><i
-                                                                    class="fa fa-edit"></i></button>
-                                                        </a>
-                                                            <button class="btn btn-danger"><i
-                                                                    class="fa fa-trash"></i></button>
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                                            <tr>
+                                                <td>LG Screen</td>
+                                                <td>43 Inc</td>
+                                                <td>
+                                                    103 Adet
+                                                    <button class="btn btn-warning"><i class="fa fa-edit"></i></button>
+                                                    </a>
+                                                    <button class="btn btn-danger"><i class="fa fa-trash"></i></button>
+                                                    </a>
+                                                </td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </div>

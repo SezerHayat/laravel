@@ -28,6 +28,9 @@ Route::group(['middleware'=>'auth'],function(){
         Route::post('/password/{id}',[PersonelController::class,'personelEditPassword'])->name('personelEditPassword');
         Route::post('/upadte/{id}',[PersonelController::class,'personelUpdate'])->name('personelUpdate');
     });
+
+    Route::get('/mesais',[MesaiController::class,'index'])->name('mesais');
+    Route::get('/overtime',[MesaiController::class,'overtime'])->name('overtime');
     Route::post('/mesaiStart',[MesaiController::class,'mesaiStart'])->name('mesaiStart');
     Route::post('/mesaiEnd',[MesaiController::class,'mesaiEnd'])->name('mesaiEnd');
     Route::post('/mesai-not/{id}',[MesaiController::class,'mesainote'])->name('mesainote');
